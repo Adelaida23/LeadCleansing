@@ -10,7 +10,7 @@ use App\Models\Lead;
 //use Psy\Util\Str;
 use App\Models\Config;
 
-class EmailOversight
+class EmailOversight2
 { 
     public static $key = 'dbef7bbb-c5f7-432c-a541-63a989fdd313'; //@todo : make it dynamic in settings
     public static $endpoint = 'https://api.emailoversight.com/api/EmailValidation';
@@ -21,9 +21,7 @@ class EmailOversight
 
     public static function call($email, $list_id='95052')
     {
-
         self::$mode = _config('eostatus');
-
 
         if (self::$mode=='emulate'){
             return self::fake($email);
@@ -73,7 +71,7 @@ class EmailOversight
 
                               "ListId" => 95052,
                               "Email" => "$email",
-                              "Result" => "Verified",
+                              "Result" => "Verifiedd",
                               "ResultId" => 1,
                               "EmailDomainGroupId" => 5,
                               "EmailDomainGroup" => "GOOGLE",
@@ -85,7 +83,7 @@ class EmailOversight
         else {
             $out = ["ListId" => 95052,
                 "Email" => "$email",
-                "Result" => "Undeliverable",
+                "Result" => "Undeliverabledd",
                 "ResultId" => 2,
                 "EmailDomainGroupId" => 2,
                 "EmailDomainGroup" => "YAHOO",

@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\ConfigController;
+use App\Http\Controllers\LeadcheckController;
+use App\Models\Page;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +22,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
 Route::get('pruebaBD', function () {
-    
-    $cat = DB::table('lists')
-        ->get();
-    return $cat;
+    $sites = DB::table('pages')->get();
+ //   $users = DB::table('users')->get();
+    return $sites;
 });
+*/
+//Route::post('config_prue', [ConfigController::class, 'store']);
+Route::post('check_leads', [LeadcheckController::class, 'store']);
