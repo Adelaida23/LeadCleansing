@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class AddLastChechedToLeads extends Migration
+class AddLastCheckedToLeads extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,7 @@ class AddLastChechedToLeads extends Migration
     public function up()
     {
         Schema::table('leads', function (Blueprint $table) {
-            // DB::raw('CURRENT_TIMESTAMP') probar
-            $table->dateTime('last_checked')->nullable()->default(DB::raw('created_at'))->after('subid3');
-            //  $table->dateTime('last_checked')->nullable()->default('created_at')->after('subid3');
-            //quitar nullable
-            // $table->dateTime('last_checked')->nullable()->default('2020-01-01 00:00:00')->after('subid3');
+            $table->date('last_checked')->nullable()->default(DB::raw('created_at'))->after('subid3');
         });
     }
 

@@ -197,9 +197,11 @@ class EmailOversightTest extends TestCase
     
     public function test_ListEmail_since_model(){
         $lista = Lead::emailsLeadCheckSinceMonths();
-        assertCount(10, $lista);
+        assertCount(30, $lista);
+        print_r($lista);
     }
 
+    //post ruta check
     public function test_post_check_leads()
     {
         $this->withoutExceptionHandling();
@@ -220,7 +222,7 @@ class EmailOversightTest extends TestCase
 
 
 
-
+/*
     public function email_verify(Request $request)
     {
         $lead = $request->email;
@@ -256,4 +258,5 @@ class EmailOversightTest extends TestCase
             $resultado = "ERROR CONFIG";
         }
     }
+    */
 }
