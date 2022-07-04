@@ -31,3 +31,4 @@ Route::get('pruebaBD', function () {
 */
 //Route::post('config_prue', [ConfigController::class, 'store']);
 Route::post('check_leads', [LeadcheckController::class, 'store']);
+Route::get('/pingMailchipm', [LeadcheckController::class, 'pingMailchimp']);
