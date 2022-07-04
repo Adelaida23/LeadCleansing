@@ -9,10 +9,10 @@ class Mailchimp {
     protected $mailchimp;
     public function __construct($config = []) {
         foreach($config as $k=>$v){
-            $this->$k = $v;
+            $this->$k = $v; 
         }
         $this->init();
-    }
+    } 
     public function init(){
         $this->mailchimp = new \MailchimpMarketing\ApiClient();
         $this->mailchimp->setConfig([
@@ -213,6 +213,8 @@ class Mailchimp {
         );
         return $response;
     }
+
+    
 
 
 
